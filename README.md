@@ -1,6 +1,6 @@
 # Movie-Organizer
 
-Movie-Organizer is a web application to help you catalog, manage, and view your movie collection. It uses modern web technologies and follows the MVC (Model-View-Controller) architecture.
+Movie-Organizer is a web application to help you catalog, manage, and view your movie collection. MVC architecture.
 
 ---
 
