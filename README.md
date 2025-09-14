@@ -39,7 +39,7 @@ Movie-Organizer is a web application to help you catalog, manage, and view your 
 
 - Node.js (v14.x or higher recommended)  
 - npm (comes with Node.js)  
-- Database server (if applicable)  
+- Database server
 
 ### Installation  
 
