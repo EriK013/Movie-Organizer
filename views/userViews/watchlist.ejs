@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>My Watchlist</title>
+</head>
+<body>
+
+<!--Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="/">🎬 Movie Watchlist</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/watchlist">My Watchlist</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/watched">Watched History</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/logout">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Watchlist Section -->
+<div class="container">
+    <h1>Your Watchlist</h1>
+
+    <% if (watchlistMovies.length === 0) { %>
+        <p>Your watchlist is empty. Start adding movies!</p>
+    <% } else { %>
+        <div class="movie-list">
+            <% watchlistMovies.forEach(movie => { %>
+                <di*v class="movie-card">
+                    <div class="movie-info">
+                        <img src="<%= movie.poster %>"
+                             onerror="this.onerror=null; this.src='/images/placeholder.png'"
+                             alt="<%= movie.title %> Poster">
+                        <h3><%= movie.title %> (<%= movie.year %>)</h3>
+                        <p>Added on: <%= new Date(movie.addedAt).toLocaleDateString() %></p>
+                    </div>
+                    <div class="movie-buttons">
+                        <button class="watched-btn" data-id="<%= movie._id %>">Watched</button>
+                        <button class="remove-btn" data-id="<%= movie._id %>">Remove</button>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    <% } %>
+</div>
+
+<script src="javascripts/listButtons.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

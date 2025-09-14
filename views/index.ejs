@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <title>🎬 Movie Tracker</title>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="/">🎬 Movie Tracker</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav ml-auto">
+            <% if (!user) { %>
+                <li class="nav-item">
+                    <a class="nav-link" href="/register">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Login</a>
+                </li>
+            <% } else { %>
+                <li class="nav-item">
+                    <a class="nav-link" href="/watchlist">My Watchlist</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/watched">Watched History</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Logout</a>
+                </li>
+            <% } %>
+        </ul>
+    </div>
+</nav>
+
+<!-- Search Section -->
+<div class="search-container">
+    <div class="search-box">
+        <h1>Search for Movies</h1>
+        <form action="/search" method="POST" class="search-form">
+            <input type="text" name="query" required placeholder="Enter movie name...">
+            <button type="submit">Search</button>
+        </form>
+
+        <% if (error) { %>
+            <p><%= error %></p>
+        <% } %>
+
+        <% if (movies) { %>
+            <div class="movie-list">
+                <% movies.forEach(movie => { %>
+                    <div class="movie-card">
+                        <div class="movie-info">
+                            <img src="<%= movie.Poster %>"
+                                 onerror="this.onerror=null; this.src='/images/placeholder.png'"
+                                 alt="<%= movie.Title %> Poster">
+                            <h3><%= movie.Title %> (<%= movie.Year %>)</h3>
+                        </div>
+                        <div class="movie-buttons">
+                            <button class="watched"
+                                    data-title="<%= movie.Title %>"
+                                    data-year="<%= movie.Year %>"
+                                    data-poster="<%= movie.Poster %>">
+                                Watched
+                            </button>
+                            <button class="watch-later"
+                                    data-title="<%= movie.Title %>"
+                                    data-year="<%= movie.Year %>"
+                                    data-poster="<%= movie.Poster %>">
+                                Watch Later
+                            </button>
+                        </div>
+                    </div>
+                <% }); %>
+            </div>
+        <% } %>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>Movie Watchlist &copy; 2025. All rights reserved.</p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="javascripts/listButtons.js"></script>
+</body>
+</html>

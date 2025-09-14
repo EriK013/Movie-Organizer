@@ -1,0 +1,292 @@
+/* General Styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 15px;
+  padding: 0;
+  background-color: #121212;
+  color: white;
+}
+
+/* Menu Bar */
+.navbar {
+  background-color: #1f1f1f;
+}
+.navbar-brand {
+  color: #ffcc00 !important;
+  font-size: 24px;
+  font-weight: bold;
+}
+.nav-link {
+  color: white !important;
+}
+
+.nav-link:hover {
+  background-color: #e6b800;
+  border: none;
+  border-radius: 5px;
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+
+.search-container, .container {
+  flex: 1;
+  text-align: center;
+  padding: 20px;
+}
+
+.search-box h1 {
+  font-size: 28px;
+}
+
+.search-form input {
+  padding: 10px;
+  width: 60%;
+  font-size: 16px;
+}
+
+.search-form button {
+  padding: 10px 15px;
+  background: #ffcc00;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.search-form button:hover {
+  background: #e6b800;
+}
+
+/* Movie Cards */
+.movie-list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.movie-card {
+  background: #1f1f1f;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 200px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 450px;
+}
+
+.movie-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.movie-card h3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.5em;
+  max-height: 4.5em;
+  transition: max-height 1ms ease;
+  font-size: 1.5em;
+  padding: 5px;
+}
+
+.movie-card h3:hover {
+  -webkit-line-clamp: unset;
+  max-height: 100%;
+  overflow: visible;
+}
+
+.movie-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.movie-buttons button {
+  flex: 1;
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.2s;
+}
+
+/* Watched button */
+.watched, .watched-btn {
+  background: #28a745;
+  color: white;
+}
+
+.watched:hover, .watched-btn:hover {
+  background: #218838;
+  transform: scale(1.05);
+}
+
+/* Watch Later button */
+.watch-later{
+  background: #ffcc00;
+  color: black;
+}
+
+.watch-later:hover {
+  background: #e6b800;
+  transform: scale(1.05);
+}
+
+.remove-btn {
+  background: darkred;
+  color: black;
+}
+
+.remove-btn:hover {
+  background: #f30404;
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #1f1f1f;
+  margin-top: auto;
+}
+
+/* Login/Registraion */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #121212;
+  color: white;
+}
+
+.auth-form {
+  background: #1f1f1f;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 350px;
+}
+
+.auth-form h2 {
+  color: #ffcc00;
+}
+
+.auth-form label {
+  display: block;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.auth-form input {
+  width: 95%;
+  padding: 10px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 5px;
+  display: block;
+}
+
+.auth-form button {
+  margin-top: 15px;
+  padding: 10px;
+  width: 100%;
+  background: #ffcc00;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.auth-form button:hover {
+  background: #e6b800;
+}
+
+.auth-form .menu-button {
+  display: block;
+  margin-top: 10px;
+  color: #ffcc00;
+  text-decoration: none;
+}
+
+.auth-form .menu-button:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .menu-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .menu-items {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .menu-items a {
+    margin: 5px 0;
+  }
+  .search-form input {
+    width: 80%;
+  }
+  .movie-card {
+    max-width: 90%;
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo a {
+    font-size: 20px;
+  }
+  .menu-items a {
+    padding: 8px;
+    font-size: 14px;
+  }
+  .search-box h1 {
+    font-size: 24px;
+  }
+  .search-form input {
+    width: 90%;
+  }
+  .search-form button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+  .movie-card {
+    padding: 10px;
+  }
+  .movie-buttons button {
+    padding: 8px;
+    font-size: 12px;
+  }
+  footer {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
