@@ -10,20 +10,16 @@ Movie-Organizer is a web application to help you catalog, manage, and view your 
 - [Tech Stack](#tech-stack)  
 - [Getting Started](#getting-started)  
 - [Configuration](#configuration)  
-- [Usage](#usage)  
-- [Project Structure](#project-structure)  
-- [Contributing](#contributing)  
-- [License](#license)
+
 
 ---
 
 ## Features
 
 - Add, edit, delete movies  
-- View list of all movies  
-- Detail view for each movie  
-- Search or filter movies (if implemented)  
-- Responsive UI (works on desktop/mobile)  
+- View list of all movies    
+- Search movies 
+- Responsive UI
 
 ---
 
@@ -66,6 +62,9 @@ Open in your browser at:
 http://localhost:3000
 
 ### Configuration
-You may need a .env file with variables:
+You need a api.env file with variables:
 
+   ```bash
+   OMDB_API_KEY={YOUR API KEY}
+   MONGO_URI={YOUR MONGO_URI}
 
