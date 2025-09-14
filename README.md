@@ -45,3 +45,27 @@ Movie-Organizer is a web application to help you catalog, manage, and view your 
 - npm (comes with Node.js)  
 - Database server (if applicable)  
 
+### Installation  
+
+1. Clone the repo:  
+
+   ```bash
+   git clone https://github.com/EriK013/Movie-Organizer.git
+   cd Movie-Organizer
+   
+2. Install dependencies:
+npm install
+
+3. Set up the database (configure connection string and run migrations if needed).
+
+4. Start the app:
+npm start
+Open in your browser at:
+
+5. Open in your browser at:
+http://localhost:3000
+
+### Configuration
+You may need a .env file with variables:
+
+
