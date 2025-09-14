@@ -29,7 +29,7 @@ Movie-Organizer is a web application to help you catalog, manage, and view your 
 - **Express.js** — Web framework  
 - **EJS** — Templating engine  
 - **CSS** — Styling  
-- **Any database** — (You’ll specify which, e.g. MongoDB, MySQL, SQLite)  
+- **MongoDB**
 
 ---
 
